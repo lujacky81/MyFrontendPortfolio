@@ -55,6 +55,7 @@ button {
 
 .click {
     transition: all 400ms ease;
+    cursor: pointer;
 }
 
 .click:hover {
@@ -198,6 +199,7 @@ input, textarea {
     border-top: none;
     border-left: none;
     border-right: none;
+    transition: all 300ms ease;
 }
 
 label {
@@ -209,6 +211,14 @@ textarea {
     resize: vertical;
     height: 100px;
     margin-top: 8px;
+}
+
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+}
+
+input:focus, textarea:focus {
+    border-color: rgba(255, 157, 0, 0.8);
 }
 
 /*
@@ -271,6 +281,7 @@ MODAL
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .modal__title {
@@ -333,6 +344,77 @@ MODAL
 
 .form__item {
     margin-bottom: 20px;
+}
+
+.form__submit {
+    background-color: rgba(255, 157, 0, 0.8);
+    border: 2px solid rgba(255, 157, 0, 0.8);
+    color: white;
+    font-weight: 700;
+    max-width: 240px;
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 20px;
+    transition: all 300ms ease;
+}
+
+.form__submit:hover {
+    border-color: white;
+    background-color: transparent;
+}
+
+.form__submit:active {
+    border-color: rgba(255, 157, 0, 0.8);
+    color: rgba(255, 157, 0, 0.8);
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay--loading {
+    background-color: #242424;
+
+    font-size: 80px;
+    z-index: -1;
+}
+
+.fa-spinner {
+    animation: spinner 750ms infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal__overlay--success {
+    background-color: #4bb543;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+}
+
+.modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;
 }
 
 /* 
