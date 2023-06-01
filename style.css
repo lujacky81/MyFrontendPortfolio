@@ -75,8 +75,7 @@ a {
     text-decoration: none;
 }
 
-a:visited {
-    text-decoration: none;
+.about-me:visited {
     color: rgba(255, 157, 0, 0.8);
 }
 
