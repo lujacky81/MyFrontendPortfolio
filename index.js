@@ -51,6 +51,7 @@ function toggleModal(){
 }
 
 function moveBackground(event) {
+    if(document.documentElement.clientWidth <= 768) {return}
     const shapes = document.querySelectorAll(".shape");
     const x = event.clientX * scaleFactor;
     const y = event.clientY * scaleFactor;
